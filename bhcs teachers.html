@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>School App Home Page</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f6e58d; /* Macaroon color */
+        }
+  h1{
+
+text-shadow: 0px 0px 8px orangered,
+
+0px 0px 12px orangered,
+
+0px 0px 16px orangered;
+
+font-size: 50px;
+
+color: #FFF
+
+}
+
+        header {
+            background-color: #ff9999; /* Aesthetic color background */
+            color: #fff;
+            padding: 20px;
+            text-align: center;
+            position: relative;
+        }
+
+        .school-logo {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            width: 100px;
+          border-radius: 55px;
+            height: auto;
+            opacity: 0.3; /* Transparency */
+        }
+
+        nav {
+            background-color: #fff6ee; /* Aesthetic color background */
+            padding: 20px 0;
+            text-align: center;
+            display: none;
+        }
+
+        ul {
+            list-style-type: none;
+            margin: 0 auto;
+            padding: 0;
+        }
+
+        li {
+            display: inline-block;
+            margin: 20px 10px;
+        }
+
+        a {
+            text-decoration: none;
+            color: #333;
+            border-radius: 20px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            width: 140px;
+            height: 140px;
+            background-color: #ffd9c4; /* Aesthetic color background */
+            transition: background-color 0.3s ease;
+        }
+
+        a:hover {
+            background-color: #ffa69e; /* Aesthetic color background */
+            color: #fff6ee;
+        }
+
+        img {
+            width: 70px;
+            height: 70px;
+        }
+
+        .option-name {
+            margin-top: 10px;
+            font-size: 16px;
+            color: #4c4c6d;
+        }
+
+        .login-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .login-box {
+            background-color: #fff6ee; /* Aesthetic color background */
+            border-radius: 30px;
+            padding: 20px;
+            box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.1);
+        }
+
+        input[type="text"],
+        input[type="password"] {
+            width: 100%;
+            padding: 10px;
+            margin: 8px 0;
+            box-sizing: border-box;
+            border: 10px solid #ccc;
+            border-radius: 29px;
+            outline: none;
+            font-size: 16px;
+        }
+
+        input[type="button"] {
+            background-color: #ff9999; /* Aesthetic color background */
+            color: white;
+            padding: 14px 20px;
+            margin: 8px 0;
+            border: none;
+            border-radius: 25px;
+            cursor: pointer;
+            width: 100%;
+            font-size: 16px;
+        }
+
+        input[type="button"]:hover {
+            background-color: #ffa69e; /* Aesthetic color background */
+        }
+
+        .internet-check {
+            display: none;
+            background-color: #f00;
+            color: #fff;
+            text-align: center;
+            padding: 10px;
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 1000;
+        }
+
+        .loader {
+            border: 8px solid #f3f3f3; /* Light grey */
+            border-top: 8px solid #3498db; /* Blue */
+            border-radius: 50%;
+            width: 50px;
+            height: 50px;
+            animation: spin 1s linear infinite;
+            margin: auto;
+            margin-top: 20px;
+            margin-bottom: 20px;
+        }
+
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+    </style>
+</head>
+<body>
+    <div class="internet-check" id="internetCheck">Please connect your phone with the internet</div>
+    <header>
+        <img class="school-logo" src="school_logo.png" alt="School Logo">
+        <h1>Welcome to B.H.C.S</h1>
+    </header>
+    <nav id="navigation">
+        <ul>
+            <li><a href="attendance_link"><img src="attendance.png" alt="Attendance"> <span class="option-name">Attendance</span></a></li>
+            <li><a href="file:///storage/emulated/0/Download/Bhcs/home%20work%20got.html"><img src="homework.png" alt="Homework"> <span class="option-name">Homework</span></a></li>
+            <li><a href="classwork_link"><img src="classwork.png" alt="Class Work"> <span class="option-name">Class Work</span></a></li>
+            <li><a href="bustracking_link"><img src="bustracking.png" alt="Bus Tracking"> <span class="option-name">Bus Tracking</span></a></li>
+            <li><a href="notice_link"><img src="notifications.png" alt="Notice"> <span class="option-name">Notice</span></a></li>
+            <li><a href="complain_link"><img src="complain.png" alt="Complain"> <span class="option-name">Complain</span></a></li>
+            <li><a href="onlineclasses_link"><img src="onlineclasses.png" alt="Online Classes"> <span class="option-name">Online Classes</span></a></li>
+            <li><a href="profile_link"><img src="profile.png" alt="Profile"> <span class="option-name">Profile</span></a></li>
+            <li><a href="payingfees_link"><img src="payingfees.png" alt="Paying Fees"> <span class="option-name">Paying Fees</span></a></li>
+            <li><a href="marks_link"><img src="marks.png" alt="Marks"> <span class="option-name">Marks</span></a></li>
+        </ul>
+    </nav>
+    <div class="login-container" id="loginContainer">
+        <div class="login-box">
+            <h2>Login</h2>
+            <input type="text" id="regNumber" placeholder="Registration Number">
+            <input type="password" id="password" placeholder="Password">
+            <div id="loader" class="loader" style="display:none;"></div>
+            <input type="button" value="Login" onclick="login()">
+          <p>created by trishanjit malik</p>
+        </div>
+    </div>
+
+    <script>
+        function login() {
+            var regNumber = document.getElementById("regNumber").value;
+            var password = document.getElementById("password").value;
+            var loader = document.getElementById("loader");
+            var welcomeMessage = document.getElementById("welcomeMessage");
+
+            if (regNumber === "66" && password === "67") {
+                loader.style.display = "block";
+                setTimeout(function(){
+                    document.getElementById("loginContainer").style.display = "none";
+                    document.getElementById("navigation").style.display = "block";
+                    welcomeMessage.innerText = "Welcome Shritama Das";
+                    loader.style.display = "none";
+                }, 1000);
+            } else if (regNumber === "829" && password === "830") {
+                loader.style.display = "block";
+                setTimeout(function(){
+                    document.getElementById("loginContainer").style.display = "none";
+                    document.getElementById("navigation").style.display = "block";
+                    welcomeMessage.innerText = "Welcome Trishabjit Malik";
+                    loader.style.display = "none";
+                }, 1000);
+            } else {
+                alert("Invalid registration number or password");
+            }
+        }
+
+        function checkInternetConnection() {
+            var internetCheckDiv = document.getElementById("internetCheck");
+            if (!navigator.onLine) {
+                internetCheckDiv.style.display = "block";
+            } else {
+                internetCheckDiv.style.display = "none";
+            }
+        }
+
+        checkInternetConnection();
+
+        window.addEventListener("online", checkInternetConnection);
+        window.addEventListener("offline", checkInternetConnection);
+    </script>
+</body>
+</html>

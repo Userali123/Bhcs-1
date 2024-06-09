@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Student Attendance</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header>
+    <h1>Student Attendance</h1>
+  </header>
+  
+  <main>
+    <section class="attendance">
+      <h2>Your Attendance Status</h2>
+      <div class="status">
+        <p>You were <span id="attendanceStatus">Present</span> on 2024-04-25.</p>
+      </div>
+    </section>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+<style>
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f3f4f6;
+}
+
+header {
+  background-color: #1e272e;
+  color: #fff;
+  padding: 20px;
+  text-align: center;
+}
+
+h1 {
+  margin: 0;
+}
+
+main {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: calc(100vh - 100px);
+}
+
+.attendance {
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  width: 80%;
+  max-width: 600px;
+}
+
+h2 {
+  color: #333;
+  margin-top: 0;
+}
+
+.status {
+  text-align: center;
+}
+
+#attendanceStatus {
+  font-weight: bold;
+  color: #2ecc71; /* Green color for present */
+}
+
+.present {
+  color: #2ecc71;
+}
+
+.absent {
+  color: #e74c3c; /* Red color for absent */
+}
+
+</style>
+<script>
+
+document.addEventListener('DOMContentLoaded', function() {
+  // Fetch the attendance status from the server or local storage
+  const attendanceStatus = "Absent"; // Example: Retrieving the attendance status
+  
+  // Update the attendance status in the HTML
+  const attendanceStatusElement = document.getElementById('attendanceStatus');
+  attendanceStatusElement.textContent = attendanceStatus;
+});
+
+</script>
+</html>
